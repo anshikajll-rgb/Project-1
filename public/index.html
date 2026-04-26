@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium To-Do App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Auth View -->
+    <div id="auth-view" class="view active">
+      <div class="glass-card zoom-in">
+        <h1 class="gradient-text">Welcome Back</h1>
+        <p>Log in or sign up to manage your tasks.</p>
+        <div class="tabs">
+          <button id="tab-login" class="tab active" onclick="switchAuthTab('login')">Login</button>
+          <button id="tab-register" class="tab" onclick="switchAuthTab('register')">Register</button>
+        </div>
+        
+        <form id="auth-form">
+          <div class="input-group">
+            <input type="text" id="username" placeholder="Username" required autocomplete="off">
+          </div>
+          <div class="input-group">
+            <input type="password" id="password" placeholder="Password" required>
+          </div>
+          <button type="submit" class="primary-btn" id="auth-submit-btn">Login</button>
+        </form>
+        <div id="auth-error" class="error-msg"></div>
+      </div>
+    </div>
+
+    <!-- Dashboard View -->
+    <div id="dashboard-view" class="view">
+      <header class="dashboard-header slide-down">
+        <div class="header-left">
+          <h1 class="gradient-text">My Tasks</h1>
+        </div>
+        <button class="ghost-btn" id="logout-btn">Logout <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg></button>
+      </header>
+
+      <main class="dashboard-main slide-up">
+        <form id="todo-form" class="todo-form glass-card">
+          <input type="text" id="todo-title" placeholder="What needs doing?" required autocomplete="off">
+          <input type="text" id="todo-desc" placeholder="Details (optional)" autocomplete="off">
+          <button type="submit" id="add-todo-btn" class="primary-btn square-btn">+</button>
+        </form>
+
+        <div class="task-list-container">
+          <ul id="task-list" class="task-list">
+            <!-- Tasks injected here -->
+          </ul>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="background-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
