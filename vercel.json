@@ -2,8 +2,9 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.js"
+     export default function handler(req, res) {
+  res.status(200).json({ message: "API is working" });
+}
     }
   ]
 }
